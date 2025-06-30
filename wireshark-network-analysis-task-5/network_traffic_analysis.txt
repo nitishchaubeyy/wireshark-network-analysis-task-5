@@ -1,0 +1,45 @@
+# Task 5: Network Traffic Analysis using Wireshark
+
+🔧 Tool Used: Wireshark 4.4.7  
+🖥️ Interface Used: Wi-Fi  
+📁 Capture File: my_capture_task5.pcapng  
+📅 Duration: ~1 minute
+
+---
+
+## ✅ Protocols Observed:
+
+1. **DNS (Domain Name System)**
+   - Converts domain names to IP addresses (e.g., google.com → 142.250.182.206)
+   - Seen in queries to domain servers over UDP port 53
+
+2. **TCP (Transmission Control Protocol)**
+   - Ensures reliable packet delivery
+   - Used for HTTPS (port 443)
+   - Detected SYN, SYN-ACK, ACK handshake pattern
+
+3. **TLSv1.2 / TLSv1.3 (Transport Layer Security)**
+   - Encrypts communication over HTTPS
+   - Seen in "Client Hello", "Server Hello", and "Application Data" packets
+   - Packet 15 (selected): Encrypted data from remote IP over port 443
+
+---
+
+## 🔍 Packet Example: Frame 15
+
+- Source: 54.71.203.198  
+- Destination: 192.168.0.100  
+- Protocol: TLSv1.2  
+- Port: 443 (HTTPS)  
+- Application Data (encrypted)
+
+---
+
+## 🧠 Learning Outcome:
+
+- Learned to capture and analyze live packets
+- Understood packet structure (Ethernet → IP → TCP → TLS)
+- Identified core internet protocols and their use
+- Gained hands-on experience using Wireshark for packet-level inspection
+
+📸 Screenshot: `wireshark_summary.png`
